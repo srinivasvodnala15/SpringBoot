@@ -27,4 +27,9 @@ public class UserController {
     public void deleteUser(@PathVariable int id) {
         userService.deleteUser(id);
     }
+
+    @PostMapping("/login")
+    public String login(@RequestBody Users user) {
+        return userService.verify(user);
+    }
 }
